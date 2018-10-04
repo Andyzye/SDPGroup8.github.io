@@ -1,0 +1,738 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/08/2018, 12:25:56 PM
+    Author     : jingl
+*/
+@font-face{
+    font-family: openSansRegular;
+    src: url(../css/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face{
+    font-family: bold;
+    src: url(../css/fonts/OpenSans-Bold.ttf);
+}
+
+body{
+    font-family: openSansRegular;
+}
+
+#logo{
+    float: left;
+    width: 150px;
+    height: 65px;
+}
+
+.navbar{
+    padding: 0px 0px 30px 50px;
+    overflow: hidden;
+    background-color: black;
+}
+
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 3px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+
+/* Change the color of links on hover */
+.navbar a:hover {
+    background-color: none;
+    color: skyblue;
+}
+
+/* Add a color to the active/current link */
+.navbar a.active {
+    background-color: deepskyblue;
+    color: black;
+}
+
+.loginForm{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
+
+.userfeatures{
+    margin-top: 50px;
+    float: right;
+    padding: 0px 0px;
+}
+
+/* Full-width input fields */
+.modal input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.modal input[type=text]:focus, input[type=password]:focus, select:focus{
+    border-color: #4195fc;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #4195fc;
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #4195fc;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px #4195fc;
+    color: rgb(0,0,0);
+}
+
+.modal input[type=text]:invalid:focus, input[type=password]:invalid:focus, select:invalid:focus{
+    border-color: rgb(248,66,66);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgb(248,66,66);
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:disabled{
+    color: gainsboro;
+    background-color: grey;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;  
+}
+
+.container {
+    padding: 16px;
+    text-align: left;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.center{
+    text-align: center;
+}
+
+.grid-container > div {
+    text-align: left;
+    font-size: 25px;
+    font-family: bold;
+}
+
+.grid-container input{
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
+    padding-left: 5px;
+    font-family: openSansRegular;
+}
+
+.submitButton{
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submitButton:hover{
+    opacity:0.8;
+}
+
+.deleteButton{
+    height:50px;
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+#deleteButton:hover{
+    opacity:0.8;
+}
+.grid-sem-name { grid-area: a;}
+.grid-sem-desc{ grid-area: b;}
+.grid-sem-name-input{ grid-area: c;}
+.grid-sem-desc-input{grid-area: d;}
+.grid-ven-loc{grid-area: f;}
+.grid-ven-loc-input{grid-area: h;}
+.grid-sem-date{grid-area: i;}
+.grid-start{grid-area: j;}
+.grid-end{grid-area: k;}
+.grid-sem-date-input{grid-area: l;}
+.grid-start-input{grid-area: m;}
+.grid-end-input{grid-area: n;}
+.grid-speaker{grid-area: o;}
+.grid-host{grid-area: p;}
+.grid-cover-photo{grid-area: q;}
+.grid-speaker-input{grid-area: r;}
+.grid-host-input{grid-area: s;}
+.grid-image{grid-area: t;}
+.grid-bio{grid-area: u;}
+.grid-image-input{grid-area: v;}
+.grid-bio-input{grid-area: w;}
+.grid-speaker2{grid-area:ob;}
+.grid-speaker2-input{grid-area:rb;}
+.grid-speaker3{grid-area:oc;}
+.grid-speaker3-input{grid-area:rc;}
+.grid-submit{grid-area: x;}
+.grid-delete{grid-area: y;}
+
+.grid-container {
+    display: inline-grid;
+    grid-gap: 15px;
+    padding-left: 30px;
+    grid-template-areas:   
+    'a a a a b'
+    'c c c c d'
+    'p p p p d'
+    's s s s d'
+    'f f f f d'
+    'h h h h d'
+    'i j k k q'
+    'l m n n t'
+    'o o o o t'
+    'r r r r t'
+    'u u u u t'
+    'w w w w v'
+    'w w w w v'
+    'ob ob . . .'
+    'rb rb rb rb rb'
+    'oc oc . . .'
+    'rc rc rc rc rc'
+    '. . x . y'; 
+}
+
+.grid-container .submitButton{
+    width: 115%;
+}
+
+.grid-container .deleteButton{
+    text-align: center;
+    width: 50%;
+    background-color: red;
+    margin-left: 150px
+}
+
+.grid-container .biotext {
+    width:515px;
+    height:165px;
+}
+.grid-container .bio2text {
+    width:235px;
+    height:165px;
+}
+.grid-container .desctext{
+    width:330px;
+    height:258px;
+}
+
+.grid-container textarea{
+    border-radius: 5px;
+    padding: 10px 10px;
+    resize: none;
+    font-family: openSansRegular;
+}
+#hostDropdown{
+    width:155px;
+    height: 45px;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-family: openSansRegular;
+}
+
+#venueDropdown{
+    width:400px;
+    height: 45px;
+    border-radius: 5px;
+    padding-left: 5px;
+    font-family: openSansRegular;
+}
+
+
+.manage-page{
+    margin: auto auto;
+    width: 800px;
+}
+
+.addAttendee-Fname{ grid-area: a;}
+.addAttendee-Lname{ grid-area: b;}
+.addAttendee-Fname-input{ grid-area: c;}
+.addAttendee-Lname-input{ grid-area: d;}
+.addAttendee-email{grid-area:e;}
+.addAttendee-email-input{grid-area:f;}
+.addAttendee-status{ grid-area:g;}
+.addAttendee-status-input{ grid-area:h;}
+.addAttendee-submit{grid-area:i;}
+.addAttendee-cancel{grid-area:j}
+
+.addAttendee-grid{
+    display: inline-grid;
+    grid-gap: 15px;
+    padding-left: 30px;
+    grid-template-areas:   
+        'a a b b'
+        'c c d d'
+        'e . . .'
+        'f f f f'
+        'g . . .'
+        'h . . .'
+        'i . j .';
+}
+#emailInput{
+    width: 100%;
+    height: 30px
+}
+#registerButton{
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 200%;
+}
+#editButton{
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 200%;
+}
+.addAttendee-cancel button {
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 200%;
+}
+
+.email-To{ grid-area: a;}
+.email-To-input{ grid-area: b;}
+.email-CC{ grid-area: c;}
+.email-CC-input{ grid-area: d;}
+.email-Subject{grid-area:e;}
+.email-subject-input{grid-area:f;}
+.email-Message{ grid-area:g;}
+.email-Message-input{ grid-area:h;}
+.email-Send{grid-area:i;}
+.email-Cancel{grid-area:j}
+
+.email-grid{
+    display: inline-grid;
+    grid-gap: 15px;
+    padding-left: 30px;
+    grid-template-areas:   
+        'a b b b'
+        'c d d d'
+        'e f f f'
+        'g . . .'
+        'h h h h'
+        'h h h h'
+        'j . . i';
+}
+.email-Cancel button {
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.email-Send button {
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+.attendee-list{
+    width: 50%;
+    border: solid 1px #ddd;
+    text-align: left;
+    border-collapse: collapse;
+    margin-left:auto; 
+    margin-right:auto;
+ 
+}
+
+/*.attendee-list thead, tbody{
+    display:block;
+}
+.attendee-list tbody{
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-top: 3px solid black;
+}
+
+.attendee-list tbody td, thead th {
+    width: 20%; 
+    border-right: 1px solid black;
+}
+
+.attendee-list tbody td:last-child, thead th:last-child {
+    border-right: none;
+}
+
+.attendee-list th{
+    padding: 34px;  
+    height: 30px;
+}
+
+.attendee-list td{
+    padding: 15px; 
+    border-bottom: solid 1px #ddd;
+}
+
+.attendee-list tr:hover{
+    background-color: #f5f5f5;
+}*/
+.add-id{ grid-area: a;}
+.add-id-input{ grid-area: b;}
+.add-fname {grid-area:c;}
+.add-lname {grid-area:d;}
+.add-fname-input {grid-area:e;}
+.add-lname-input {grid-area:f;}
+.add-email {grid-area:g;}
+.add-email-input {grid-area:h;}
+.add-password {grid-area:i;}
+.add-password-input {grid-area:j;}
+.add-role{grid-area:k;}
+.add-role-input{ grid-area:l;}
+.add-submit{grid-area:m;}
+.add-cancel{grid-area:n;}
+
+#add-grid{
+    display: inline-grid;
+    grid-gap: 15px;
+    padding-left: 30px;
+    grid-template-areas:   
+        'a a . .'
+        'b b . .'
+        'c c d d'
+        'e e f f'
+        'g g g g'
+        'h h h h'
+        'i i i i'
+        'j j j j'
+        'k k . .'
+        'l l . .'
+        'm m n n';
+}
+
+.add-role-input select{
+    height: 40px;
+    width: 210px;
+    border-radius: 5px;
+    padding-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-family: openSansRegular;
+}
+
+/*.user-list{
+    width: 100%;
+    border: solid 1px #ddd;
+    text-align: left;
+    border-collapse: collapse;
+ 
+}
+
+.user-list thead, tbody{
+    display:block;
+}
+
+.user-list tbody{
+    height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-top: 3px solid black;
+}
+
+.user-list tbody td, thead th {
+    width: 20%; 
+    border-right: 1px solid black;
+}
+
+.user-list tbody td:last-child, thead th:last-child {
+    border-right: none;
+}
+
+.user-list th{
+    padding: 15px;  
+    height: 30px;
+}
+
+.user-list td{
+    cursor: pointer;
+    padding: 15px; 
+    border-bottom: solid 1px #ddd;
+}
+
+.selected {
+    background-color: #4195fc;
+    color: #FFF;
+}*/
+
+.manage-browse{ grid-area: z;}
+.manage-fname{ grid-area: a;}
+.manage-lname{ grid-area: b;}
+.manage-fname-input{ grid-area: c;}
+.manage-lname-input{ grid-area: d;}
+.manage-email{ grid-area:e;}
+.manage-email-input {grid-area:f;}
+.manage-faculty{grid-area:g;}
+.manage-faculty-input {grid-area:h;}
+.manage-role{grid-area:i;}
+.manage-role-input{grid-area:j;}
+.manage-submit{grid-area:k;}
+.manage-delete{grid-area:l;}
+
+#manage-grid{
+    display: inline-grid;
+    grid-gap: 15px;
+    padding-left: 30px;
+    grid-template-areas:
+        'z z'
+        'a b'
+        'c d'
+        'e .'
+        'f f'
+        'g .'
+        'h h'
+        'i .'
+        'j .'
+        'k l';
+}
+.detail-seminar-venue{ grid-area: a;}
+.detail-seminar-location{ grid-area: b;}
+.detail-seminar-date{ grid-area: c;}
+.detail-seminar-start{ grid-area: d;}
+.detail-seminar-end{grid-area:e;}
+.detail-seminar-host{grid-area:f;}
+.detail-seminar-speaker{ grid-area:g;}
+.detail-seminar-speakerV{ grid-area:gv;}
+.detail-seminar-desc{grid-area:h;}
+.detail-seminar-descV{grid-area:hv;}
+.detail-seminar-register{grid-area:i;}
+
+.detail-seminar-grid{
+    display: inline-grid;
+    grid-gap: 15px;
+    padding-left: 30px;
+    text-align: left;
+    grid-template-areas:   
+        'a a a g'
+        'b b b gv'
+        'c d e gv'
+        'f f . gv'
+        'h h . .'
+        'hv hv hv hv'
+        '. . i i';
+}
+.detail-seminar-register button {
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 65%;
+}
+.detail-seminar-descV textArea{
+    width:760px; 
+    height:250px;
+}
+.detail-seminar-speakerV textArea{
+    width:430px; height:100px;
+}
+.register-Fname{ grid-area: a;}
+.register-Lname{ grid-area: b;}
+.register-Fname-input{ grid-area: c;}
+.register-Lname-input{ grid-area: d;}
+.register-email{grid-area:e;}
+.register-email-input{grid-area:f;}
+.register-status{ grid-area:g;}
+.register-status-Going{ grid-area:h;}
+.register-status-Interested{ grid-area:hb;}
+.register-registered{grid-area:i;}
+.register-submit{grid-area:j;}
+.register-cancel{grid-area:k}
+
+.register-grid{
+    display: inline-grid;
+    grid-gap: 15px;
+    padding-left: 30px;
+    grid-template-areas:   
+        'a a b b'
+        'c c d d'
+        'e . . .'
+        'f f f f'
+        'g . . .'
+        'h . hb .'
+        '. . . i'
+        'j . k .';
+}
+.register-cancel button {
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 200%;
+}
+.registerEdit-Fname{ grid-area: a;}
+.registerEdit-Lname{ grid-area: b;}
+.registerEdit-Fname-input{ grid-area: c;}
+.registerEdit-Lname-input{ grid-area: d;}
+.registerEdit-email{grid-area:e;}
+.registerEdit-email-input{grid-area:f;}
+.registerEdit-status{ grid-area:g;}
+.registerEdit-status-Going{ grid-area:h;}
+.registerEdit-status-Interested{ grid-area:hb;}
+.registerEdit-submit{grid-area:i;}
+.registerEdit-delete{grid-area:j}
+
+.registerEdit-grid{
+    display: inline-grid;
+    grid-gap: 15px;
+    padding-left: 30px;
+    grid-template-areas:   
+        'a a b b'
+        'c c d d'
+        'e . . .'
+        'f f f f'
+        'g . . .'
+        'h . hb .'
+        'i . j .';
+}
+.registerEdit-delete button {
+    background-color: red;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 200%;
+}
+
+.registered-email{ grid-area: a;}
+.registered-email-input{ grid-area: b;}
+.registered-submit{ grid-area: c;}
+
+.registered-grid{
+    display: inline-grid;
+    grid-gap: 15px;
+    padding-left: 30px;
+    grid-template-areas:   
+        'a b b b'
+        '. c c .';
+}
+.registered-email-input input{
+    width: 100%;
+    height: 30px;
+}
+.registered-cancel button {
+    background-color: #114BE9;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 65%;
+}
